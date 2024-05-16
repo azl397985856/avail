@@ -51,6 +51,7 @@ export default function Home() {
       let api = availApi
       if (!(api && api.isConnected)) {
         api = await initialize("wss://turing-rpc.avail.so/ws")
+        console.log('avail api', api)
         setAvailApi(api)
       }
 
