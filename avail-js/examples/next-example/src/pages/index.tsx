@@ -84,7 +84,7 @@ export default function Home() {
             console.log(events)
           }
           if (status.isInBlock) {
-            addLogs(`Transaction included in block: ${status.asInBlock}`, "info")
+            addLogs(`Transaction included in block: ${status.asInBlock}`, "success")
           }
         },
       )
@@ -93,7 +93,7 @@ export default function Home() {
     }
   }
 
-  const addLogs = (message: string, severity: "info" | "error") => {
+  const addLogs = (message: string, severity: "info" | "error" | "success") => {
     setLogs((prevLogs) => [...prevLogs, { message, severity }])
   }
 
@@ -108,7 +108,7 @@ export default function Home() {
                   style={{
                     border: "1px solid black",
                     padding: "8px",
-                    color: log.severity === "error" ? "red" : "black",
+                    color: log.severity === "error" ? "red" : (log.severity === "success" ? "green": "black"),
                   }}
                 >
                   {log.message}
