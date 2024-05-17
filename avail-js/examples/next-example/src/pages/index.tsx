@@ -108,7 +108,7 @@ export default function Home() {
                   style={{
                     border: "1px solid black",
                     padding: "8px",
-                    color: log.severity === "error" ? "red" : "white",
+                    color: log.severity === "error" ? "red" : "black",
                   }}
                 >
                   {log.message}
