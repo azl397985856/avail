@@ -10,7 +10,7 @@ export default function Home() {
   }>({})
   const [extensionsInitialized, setExtensionsInitialized] = useState<Record<string, boolean>>({})
   const [availApi, setAvailApi] = useState<ApiPromise | undefined>()
-  const [logs, setLogs] = useState<{ message: string; severity: "info" | "error" }[]>([])
+  const [logs, setLogs] = useState<{ message: string; severity: "info" | "error" | "success" }[]>([])
 
   const findExtension = async () => {
     // Init Extension
